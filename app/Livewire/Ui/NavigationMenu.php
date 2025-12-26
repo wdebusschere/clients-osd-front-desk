@@ -3,6 +3,7 @@
 namespace App\Livewire\Ui;
 
 use App\Models\Activity;
+use App\Models\RecipientType;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Collection;
@@ -61,6 +62,18 @@ class NavigationMenu extends Component
                 'route' => route('users.index'),
                 'active' => request()->routeIs('users.*'),
                 'can' => auth()->user()->can('viewAny', User::class),
+            ],
+            (object) [
+                'label' => trans_choice('app.options', 0),
+                'icon' => 'icons.outline.cog-6-tooth',
+                'items' => collect([
+                    (object) [
+                        'label' => trans_choice('app.recipient_types', 0),
+                        'route' => route('recipient-types.index'),
+                        'active' => request()->routeIs('recipient-types.*'),
+                        'can' => auth()->user()->can('viewAny', RecipientType::class),
+                    ],
+                ])
             ],
             (object) [
                 'label' => trans_choice('app.system', 0),
