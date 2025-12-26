@@ -1,0 +1,3 @@
+<x-icons.types.outline {{ $attributes }}>
+    <path d="M5.25 4.5L12.75 12L5.25 19.5M11.25 4.5L18.75 12L11.25 19.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</x-icons.types.outline>

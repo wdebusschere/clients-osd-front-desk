@@ -1,0 +1,22 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Authentication Language Lines
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are used during authentication for various
+    | messages that we need to display to the user. You are free to modify
+    | these language lines according to your application's requirements.
+    |
+    */
+
+    'failed' => 'These credentials do not match our records.',
+    'inactive' => 'Your account is inactive. Please contact the administrator.',
+    'password' => 'The provided password is incorrect.',
+    'remaining_attempts' => '{0} You have exhausted the number of attempts.|{1} You have 1 attempt remaining before being locked out.|[2,*] You have :attempts attempts remaining before being locked out.',
+    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+
+];

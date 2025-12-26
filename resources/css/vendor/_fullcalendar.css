@@ -1,0 +1,77 @@
+.fc-theme-standard .fc-scrollgrid {
+    @apply border-0;
+}
+
+.fc-theme-standard td, .fc-theme-standard th {
+    @apply border-gray-200 dark:border-slate-600;
+}
+
+.fc-theme-standard td:last-child, .fc-theme-standard th:last-child {
+    @apply border-r-0;
+}
+
+.fc-theme-standard tr:last-child td {
+    @apply border-b-0;
+}
+
+.fc .fc-daygrid-day.fc-day-today,
+.fc .fc-timegrid-col.fc-day-today {
+    @apply bg-gray-50 dark:bg-slate-700;
+}
+
+.fc-event {
+    @apply items-start;
+}
+
+.fc-event, .event-title {
+    @apply whitespace-normal overflow-hidden;
+}
+
+.fc-daygrid-event,
+.fc-timegrid-event {
+    @apply px-1 cursor-pointer bg-gray-200 dark:bg-slate-500 border-gray-300 dark:border-slate-400 hover:bg-gray-100 dark:hover:bg-slate-500 transition-colors shadow-none!;
+}
+
+.fc-daygrid-event-dot {
+    @apply mt-1.5;
+}
+
+.fc-event-main {
+    @apply text-gray-700! dark:text-white!;
+}
+
+.fc-h-event .fc-event-time {
+    overflow: visible;
+}
+
+.fc-daygrid-dot-event {
+    @apply border border-gray-300 dark:border-slate-600;
+}
+
+.fc .fc-button-primary {
+    @apply btn btn-primary;
+    outline: none;
+    outline-offset: 0;
+}
+
+.fc .fc-button-primary:disabled {
+    @apply text-white dark:text-slate-900;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus, .fc .fc-button-primary:not(:disabled):active:focus {
+    box-shadow: none;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active {
+    @apply bg-gray-500;
+}
+
+.fc .fc-button-primary:active {
+    outline: none;
+    outline-offset: 0;
+}
+
+.fc .fc-button-primary:focus {
+    outline: none;
+    outline-offset: 0;
+}

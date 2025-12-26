@@ -1,0 +1,14 @@
+@keyframes bounce-horizontal {
+    0%, 100% {
+        width: 1%;
+        transform: translateX(0);
+    }
+    50% {
+        width: 100%;
+        transform: translateX(100%);
+    }
+}
+
+.animate-bounce-horizontal {
+    animation: bounce-horizontal 2s ease-in-out infinite;
+}

@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+@import './components/components.css';
+@import './vendor/vendor.css' layer(components);
+
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/laravel/jetstream/**/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../../node_modules/flowbite-datepicker/**/*.js';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans:
+    Figtree, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility link {
+  @apply text-black dark:text-white hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors duration-150;
+}
+
+@utility text-muted {
+  @apply text-gray-500 dark:text-slate-400;
+}
+
+@utility align-top {
+  th,
+  td {
+    vertical-align: top;
+  }
+}
+
+@utility align-middle {
+  th,
+  td {
+    vertical-align: middle;
+  }
+}
+
+@utility align-bottom {
+  th,
+  td {
+    vertical-align: bottom;
+  }
+}
+
+@layer utilities {
+  [x-cloak] {
+    display: none;
+  }
+
+  body {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-gray-900 text-white;
+  }
+}

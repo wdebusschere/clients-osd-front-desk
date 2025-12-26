@@ -1,0 +1,1 @@
+<input type="range" {{ $attributes->merge(['class' => 'w-full h-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-slate-700 focus:border-gray-600 dark:focus:border-slate-400 rounded-lg appearance-none cursor-pointer focus:outline-hidden']) }}>

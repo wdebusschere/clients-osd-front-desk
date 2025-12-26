@@ -1,0 +1,63 @@
+@layer components {
+    /* Chrome, Safari, Edge */
+    input[type="range"]::-webkit-slider-thumb {
+        @apply appearance-none w-4 h-4 bg-gray-600 dark:bg-slate-600 rounded-full border-0 cursor-pointer transition-colors duration-300;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+        @apply bg-gray-400 dark:bg-slate-400;
+    }
+
+    /* Firefox */
+    input[type="range"]::-moz-range-thumb {
+        @apply w-4 h-4 bg-gray-600 dark:bg-slate-400 rounded-full border-0 cursor-pointer transition-colors duration-300;
+    }
+
+    input[type="range"]::-moz-range-thumb:hover {
+        @apply bg-gray-400 dark:bg-slate-400;
+    }
+
+    /* Internet Explorer */
+    input[type="range"]::-ms-thumb {
+        @apply w-4 h-4 bg-gray-600 dark:bg-slate-400 rounded-full cursor-pointer transition-colors duration-300;
+    }
+
+    /* General Hover Effect */
+    input[type="range"]:hover::-webkit-slider-thumb {
+        @apply bg-gray-400 dark:bg-slate-400;
+    }
+
+    input[type="range"]:hover::-moz-range-thumb {
+        @apply bg-gray-400 dark:bg-slate-400;
+    }
+
+    input[type="range"]:hover::-ms-thumb {
+        @apply bg-gray-400 dark:bg-slate-400;
+    }
+
+    /* General Focus Effect */
+    input[type="range"]:focus::-webkit-slider-thumb {
+        @apply bg-gray-400 dark:bg-slate-400;
+    }
+
+    input[type="range"]:focus::-moz-range-thumb {
+        @apply bg-gray-400 dark:bg-slate-400;
+    }
+
+    input[type="range"]:focus::-ms-thumb {
+        @apply bg-gray-400 dark:bg-slate-400;
+    }
+
+    /* General Disabled Effect */
+    input[type="range"]:disabled::-webkit-slider-thumb {
+        @apply bg-gray-300 dark:bg-slate-700;
+    }
+
+    input[type="range"]:disabled::-moz-range-thumb {
+        @apply bg-gray-300 dark:bg-slate-700;
+    }
+
+    input[type="range"]:disabled::-ms-thumb {
+        @apply bg-gray-300 dark:bg-slate-700;
+    }
+}
