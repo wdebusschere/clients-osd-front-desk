@@ -29,9 +29,15 @@
         {{ $slot }}
     </div>
 
-    @isset($footer)
+    @isset($model)
         <x-slot:footer>
-            {{ $footer }}
+            <div class="text-sm">
+                <strong>@lang('crud.created_at'):</strong> @datetime($model->created_at)
+            </div>
+
+            <div class="text-sm">
+                <strong>@lang('crud.updated_at'):</strong> @datetime($model->updated_at)
+            </div>
         </x-slot:footer>
     @endisset
 </x-ui.card>

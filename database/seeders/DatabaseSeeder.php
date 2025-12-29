@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\Dummy\DeliveryReceiptSeeder as DummyDeliveryReceiptSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
 
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PermissionSeeder::class,
             RoleSeeder::class,
+            UserSeeder::class,
             RecipientTypeSeeder::class,
         ]);
     }
@@ -29,7 +31,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PermissionSeeder::class,
             RoleSeeder::class,
+            UserSeeder::class,
             RecipientTypeSeeder::class,
+            DummyDeliveryReceiptSeeder::class
         ]);
     }
 }

@@ -8,6 +8,7 @@ return [
     'confirm_action' => 'Are you sure you want to proceed with this action?',
     'confirm_delete' => 'Are you sure you want to delete this record?',
     'create' => 'Create',
+    'created_at' => 'Create at',
     'created_resources' => '1 :resource was created.|:count :resource were created.',
     'delete' => 'Delete',
     'disable' => 'Disable',
@@ -40,6 +41,7 @@ return [
     'show_resource' => 'Show :resource',
     'showing_latest' => 'Showing latest :resource',
     'skipped_resources' => '1 :resource was skipped.|:count :resource were skipped.',
+    'updated_at' => 'Updated at',
     'updated_resources' => '1 :resource was updated.|:count :resource were updated.',
 
 ];

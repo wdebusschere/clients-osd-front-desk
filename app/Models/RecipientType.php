@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -40,4 +42,8 @@ class RecipientType extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function deliveryReceipts(): HasMany
+    {
+        return $this->hasMany(DeliveryReceipt::class);
+    }
 }

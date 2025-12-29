@@ -3,6 +3,7 @@
 namespace App\Livewire\Ui;
 
 use App\Models\Activity;
+use App\Models\DeliveryReceipt;
 use App\Models\RecipientType;
 use App\Models\Role;
 use App\Models\User;
@@ -55,6 +56,13 @@ class NavigationMenu extends Component
                 'route' => route('dashboard'),
                 'active' => request()->routeIs('dashboard'),
                 'can' => true,
+            ],
+            (object) [
+                'label' => trans_choice('app.delivery_receipts', 0),
+                'icon' => 'icons.outline.truck',
+                'route' => route('delivery-receipts.index'),
+                'active' => request()->routeIs('delivery-receipts.*'),
+                'can' => auth()->user()->can('viewAny', DeliveryReceipt::class),
             ],
             (object) [
                 'label' => trans_choice('app.users', 0),
