@@ -26,7 +26,7 @@
     </div>
 
     @isset($footer)
-        <div {{ $footer->attributes->merge(['class' => 'px-5 py-3 rounded-b-lg']) }}>
+        <div {{ $footer->attributes->merge(['class' => 'px-5 py-3 rounded-b-lg bg-gray-50 dark:bg-slate-700']) }}>
             {{ $footer }}
         </div>
     @endisset

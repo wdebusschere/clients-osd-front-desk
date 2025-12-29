@@ -50,7 +50,7 @@ class BladeServiceProvider extends ServiceProvider
         });
 
         Blade::directive('datetime', function ($date) {
-            return "<?php echo date_formatted($date, 'd/m/Y H:i'); ?>";
+            return "<?php echo date_formatted($date, 'L LT'); ?>";
         });
 
         Blade::directive('printConvertedBytes', function ($bytes) {

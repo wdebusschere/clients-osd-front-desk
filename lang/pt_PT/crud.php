@@ -8,6 +8,7 @@ return [
     'confirm_action' => 'Tem certeza de que deseja prosseguir com esta ação?',
     'confirm_delete' => 'Tem certeza de que deseja excluir este registo?',
     'create' => 'Criar',
+    'created_at' => 'Criado a',
     'created_resources' => '1 :resource foi criado.|:count :resource foram criados.',
     'delete' => 'Eliminar',
     'disable' => 'Desativar',
@@ -40,6 +41,7 @@ return [
     'show_resource' => 'Mostrar :resource',
     'showing_latest' => 'A mostrar as últimas :resource',
     'skipped_resources' => '1 :resource foi ignorado.|:count :resource foram ignorados.',
+    'updated_at' => 'Atualizado a',
     'updated_resources' => '1 :resource foi atualizado.|:count :resource foram atualizados.',
 
 ];

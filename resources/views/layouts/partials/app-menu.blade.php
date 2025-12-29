@@ -5,7 +5,7 @@
             <a class="flex items-center py-2 px-1 gap-2 cursor-pointer rounded-sm transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-slate-700 {{ $menuItem->active ? 'text-gray-900 dark:text-slate-100 bg-gray-100 dark:bg-slate-700' : '' }}"
                @isset($menuItem->route) href="{{ $menuItem->route }}" @endisset
             >
-                <x-dynamic-component :component="$menuItem->icon" class="w-6 h-5" />
+                <x-dynamic-component :component="$menuItem->icon" class="size-5" />
 
                 <span class="grow">{{ $menuItem->label }}</span>
 

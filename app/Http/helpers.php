@@ -60,14 +60,10 @@ if (! function_exists('time_formatted')) {
 if (! function_exists('date_formatted')) {
     /**
      * Formats a Carbon date.
-     *
-     * @param  Carbon|null  $date
-     * @param  string  $format
-     * @return string|null
      */
-    function date_formatted(Carbon $date = null, string $format = 'd/m/Y'): ?string
+    function date_formatted(?Carbon $date = null, string $format = 'LL'): ?string
     {
-        return $date !== null ? $date->format($format) : null;
+        return $date !== null ? $date->isoFormat($format) : null;
     }
 }
 

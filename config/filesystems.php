@@ -30,6 +30,12 @@ return [
 
     'disks' => [
 
+        'delivery_receipts' => [
+            'driver' => 'local',
+            'root' => storage_path('app/delivery_receipts'),
+            'throw' => false,
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

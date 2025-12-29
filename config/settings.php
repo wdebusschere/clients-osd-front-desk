@@ -30,6 +30,13 @@ return [
             "eps",
             "ai",
         ],
+
+        'accepted_images' => [
+            "jpg",
+            "jpeg",
+            "png",
+            "webp",
+        ],
     ],
 
 ];
