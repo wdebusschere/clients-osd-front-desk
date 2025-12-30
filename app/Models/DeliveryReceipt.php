@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
+use App\Observers\DeliveryReceiptObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
-use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
+#[ObservedBy([DeliveryReceiptObserver::class])]
 class DeliveryReceipt extends Model implements HasMedia
 {
     use HasFactory;
@@ -40,8 +42,7 @@ class DeliveryReceipt extends Model implements HasMedia
      */
     public function scopeSearch(Builder $query, $value): void
     {
-        $query->where('volumes', 'LIKE', "%{$value}%")
-            ->orWhere('observations', 'LIKE', "%{$value}%");
+        $query->where('reference', 'LIKE', "%{$value}%");
     }
 
     /*
@@ -69,6 +70,10 @@ class DeliveryReceipt extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('photo')
+            ->useDisk('delivery_receipts')
+            ->singleFile();
+
+        $this->addMediaCollection('label')
             ->useDisk('delivery_receipts')
             ->singleFile();
     }

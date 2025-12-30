@@ -127,4 +127,4 @@ focus-trap/dist/focus-trap.js:
   * focus-trap 6.9.4
   * @license MIT, https://github.com/focus-trap/focus-trap/blob/master/LICENSE
   *)
-*/vo.start();
+*/const ng=(e,t)=>({imageUrl:e,imageName:t,print(){const r=window.open("","_blank");r.document.open(),r.document.write("<html><head><title>"+this.imageName+"</title><style>body { margin: 0; padding: 20px; } img { max-width: 100%; height: auto; }</style><script>function step1() { setTimeout('step2()', 10); }function step2() { window.print(); window.close(); }<\/script></head><body onload='step1()'><img src='"+this.imageUrl+"' alt='"+this.imageName+"'/></body></html>"),r.document.close()}});Alpine.data("printImage",ng);vo.start();

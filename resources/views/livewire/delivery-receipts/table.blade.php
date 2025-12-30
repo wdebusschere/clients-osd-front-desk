@@ -41,7 +41,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        @include('livewire.tables.partials.col-header', ['title' => '#', 'class' => 'w-0', 'orderBy' => 'id'])
+                        @include('livewire.tables.partials.col-header', ['title' => trans('app.ref'), 'orderBy' => 'reference'])
                         @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.volumes', 1), 'orderBy' => 'volumes'])
                         @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.recipient_types', 1)])
                         @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.users', 1)])
@@ -52,7 +52,7 @@
                 <tbody>
                     @foreach($deliveryReceipts as $deliveryReceipt)
                         <tr wire:key="dt-row-key-{{ $deliveryReceipt->id }}">
-                            <td>{{ $deliveryReceipt->id }}</td>
+                            <td>{{ $deliveryReceipt->reference }}</td>
                             <td>{{ $deliveryReceipt->volumes }}</td>
                             <td>{{ $deliveryReceipt->recipientType->name }}</td>
                             <td>

@@ -93,6 +93,7 @@ return [
     'photos' => 'Foto|Fotos',
     'postal_code' => 'Código postal',
     'preferred_language' => 'Idioma preferido',
+    'print'  => 'Imprimir',
     'profile' => 'Perfil',
     'quantities' => 'Quantidade|Quantidades',
     'rates' => 'Taxa|Taxas',
