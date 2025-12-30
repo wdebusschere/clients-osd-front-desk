@@ -59,6 +59,7 @@ return [
     'import_from_hq' => 'Import from HQ',
     'inactive' => 'Inactive',
     'invoices' => 'Invoice|Invoices',
+    'labels'  => 'Label|Labels',
     'languages' => 'Language|Languages',
     'lines' => 'Line|Lines',
     'links' => 'Link|Links',

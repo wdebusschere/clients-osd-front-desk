@@ -1,5 +1,5 @@
 @utility btn {
-  @apply inline-flex items-center px-4 py-2 border-none rounded-md font-bold text-xs uppercase tracking-widest outline-hidden transition ease-in-out duration-300 focus:shadow-none;
+  @apply inline-flex items-center px-4 py-2 border-none rounded-md font-bold text-xs uppercase tracking-widest outline-hidden transition ease-in-out duration-300 focus:shadow-none cursor-pointer;
 
   &:disabled {
     @apply pointer-events-none opacity-80;
