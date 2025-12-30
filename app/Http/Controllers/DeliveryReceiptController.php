@@ -36,7 +36,7 @@ class DeliveryReceiptController extends Controller
             $deliveryReceipt->addMediaFromRequest('photo')->toMediaCollection('photo');
         }
 
-        return to_route('delivery-receipts.index')->banner(trans('crud.record_created_success'));
+        return to_route('delivery-receipts.show', $deliveryReceipt)->banner(trans('crud.record_created_success'));
     }
 
     public function show(DeliveryReceipt $deliveryReceipt): View
@@ -65,7 +65,7 @@ class DeliveryReceiptController extends Controller
             $deliveryReceipt->addMediaFromRequest('photo')->toMediaCollection('photo');
         }
 
-        return to_route('delivery-receipts.index')->banner(trans('crud.record_updated_success'));
+        return to_route('delivery-receipts.show', $deliveryReceipt)->banner(trans('crud.record_updated_success'));
     }
 
     public function destroy(DeliveryReceipt $deliveryReceipt): RedirectResponse
