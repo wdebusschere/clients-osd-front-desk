@@ -39,17 +39,15 @@
 
         <x-slot:aside>
             <div class="space-y-6">
-                @if($photo = $deliveryReceipt->getFirstMedia('photo'))
-                    <x-media.featured-image :title="trans_choice('app.photos', 1)" :media="$photo"/>
-                @endif
-
                 @if($label = $deliveryReceipt->getFirstMedia('label'))
                     <x-ui.card
                         x-data="printImage('{{ route('media.render', $label) }}', '{{ addslashes($label->file_name) }}')">
-                        <div class="printable_area">
-                            <img class="border border-gray-300 dark:border-slate-800"
-                                 src="{{ route('media.render', $label) }}" alt="{{ $label->file_name }}">
-                        </div>
+                        <x-slot:heading>
+                            @choice('app.labels', 1)
+                        </x-slot:heading>
+
+                        <img class="border border-gray-300 dark:border-slate-800"
+                             src="{{ route('media.render', $label) }}" alt="{{ $label->file_name }}">
 
                         <x-slot:footer>
                             <x-secondary-button @click="print" class="flex items-center gap-1">
@@ -58,6 +56,10 @@
                             </x-secondary-button>
                         </x-slot:footer>
                     </x-ui.card>
+                @endif
+
+                @if($photo = $deliveryReceipt->getFirstMedia('photo'))
+                    <x-media.featured-image :title="trans_choice('app.photos', 1)" :media="$photo"/>
                 @endif
             </div>
         </x-slot:aside>
