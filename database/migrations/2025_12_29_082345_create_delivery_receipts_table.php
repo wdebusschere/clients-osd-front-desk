@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('delivery_receipts', function (Blueprint $table) {
             $table->id();
+            $table->string('reference')->nullable();
             $table->unsignedInteger('volumes');
             $table->text('observations')->nullable();
             $table->foreignId('recipient_type_id')->constrained()->cascadeOnUpdate();

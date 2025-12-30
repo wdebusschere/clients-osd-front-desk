@@ -22,6 +22,10 @@
                 </a>
             </x-slot:headerActions>
 
+            <x-slot:headline>
+                {{ $deliveryReceipt->reference }}
+            </x-slot:headline>
+
             <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-5">
                 <x-attr.display :label="trans_choice('app.volumes', 0)">{{ $deliveryReceipt->volumes }}</x-attr.display>
                 <x-attr.display
@@ -37,6 +41,23 @@
             <div class="space-y-6">
                 @if($photo = $deliveryReceipt->getFirstMedia('photo'))
                     <x-media.featured-image :title="trans_choice('app.photos', 1)" :media="$photo"/>
+                @endif
+
+                @if($label = $deliveryReceipt->getFirstMedia('label'))
+                    <x-ui.card
+                        x-data="printImage('{{ route('media.render', $label) }}', '{{ addslashes($label->file_name) }}')">
+                        <div class="printable_area">
+                            <img class="border border-gray-300 dark:border-slate-800"
+                                 src="{{ route('media.render', $label) }}" alt="{{ $label->file_name }}">
+                        </div>
+
+                        <x-slot:footer>
+                            <x-secondary-button @click="print" class="flex items-center gap-1">
+                                <x-icons.outline.printer class="size-4"/>
+                                @lang('app.print')
+                            </x-secondary-button>
+                        </x-slot:footer>
+                    </x-ui.card>
                 @endif
             </div>
         </x-slot:aside>

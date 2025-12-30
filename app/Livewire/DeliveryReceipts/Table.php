@@ -19,7 +19,7 @@ class Table extends Component
 
     public function mount()
     {
-        $this->order = ['created_at' => 'DESC'];
+        $this->order = ['reference' => 'DESC'];
     }
 
     public function updated()
