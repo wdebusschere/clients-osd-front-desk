@@ -29,6 +29,7 @@ class DeliveryReceipt extends Model implements HasMedia
         'volumes',
         'observations',
         'recipient_type_id',
+        'recipient_id',
     ];
 
     /*
@@ -57,6 +58,11 @@ class DeliveryReceipt extends Model implements HasMedia
     }
 
     public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function recipient(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
