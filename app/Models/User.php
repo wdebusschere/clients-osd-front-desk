@@ -95,6 +95,6 @@ class User extends Authenticatable implements HasLocalePreference, MustVerifyEma
 
     public function preferredLocale(): string
     {
-        return $this->preferred_languange;
+        return $this->preferred_language;
     }
 }
