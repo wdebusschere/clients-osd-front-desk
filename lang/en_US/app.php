@@ -32,6 +32,7 @@ return [
     'dates' => 'Date|Dates',
     'day_part' => 'Day part',
     'days' => 'Day|Days',
+    'deliveries' => 'Delivery|Deliveries',
     'delivery_receipts' => 'Delivery receipt|Delivery receipts',
     'departments' => 'Department|Departments',
     'description' => 'Description',

@@ -1,3 +1,4 @@
+@props(['model'])
 <x-ui.card {{ $attributes }}>
     <x-slot:heading>
         @choice('app.details', 0)
