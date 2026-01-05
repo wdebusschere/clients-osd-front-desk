@@ -35,12 +35,14 @@ class Table extends Component
         $deliveryReceipts = DeliveryReceipt::with([
             'recipientType:id,name',
             'user:id,name',
-            'recipient:id,name',
+            'lastDeliveryNote.user:id,name',
         ])
             ->search($this->search)
             ->when($this->recipientTypeId, fn($query) => $query->where('recipient_type_id', $this->recipientTypeId))
             ->when($this->userId, fn($query) => $query->where('user_id', $this->userId))
-            ->when($this->recipientId, fn($query) => $query->where('recipient_id', $this->recipientId));
+            ->when($this->recipientId, fn($query) => $query->whereHas('lastDeliveryNote', function ($query) {
+                $query->where('user_id', $this->recipientId);
+            }));
 
         foreach ($this->order as $attribute => $direction) {
             $deliveryReceipts->orderBy($attribute, $direction);

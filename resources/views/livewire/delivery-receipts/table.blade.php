@@ -70,12 +70,12 @@
                                 </div>
                             </td>
                             <td>
-                                @if($deliveryReceipt->recipient)
+                                @if($deliveryReceipt->lastDeliveryNote)
                                     <div class="flex items-center gap-3">
-                                        <img src="{{ $deliveryReceipt->recipient->profile_photo_url }}"
-                                             alt="{{ $deliveryReceipt->recipient->name }}"
+                                        <img src="{{ $deliveryReceipt->lastDeliveryNote->user->profile_photo_url }}"
+                                             alt="{{ $deliveryReceipt->lastDeliveryNote->user->name }}"
                                              class="rounded-full h-9 w-9 object-cover border border-gray-200 dark:border-transparent">
-                                        {{ $deliveryReceipt->recipient->name }}
+                                        {{ $deliveryReceipt->lastDeliveryNote->user->name }}
                                     </div>
                                 @endif
                             </td>

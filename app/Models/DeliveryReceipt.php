@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\MediaLibrary\HasMedia;
@@ -30,7 +31,6 @@ class DeliveryReceipt extends Model implements HasMedia
         'volumes',
         'observations',
         'recipient_type_id',
-        'recipient_id',
     ];
 
     /*
@@ -63,14 +63,14 @@ class DeliveryReceipt extends Model implements HasMedia
         return $this->belongsTo(User::class);
     }
 
-    public function recipient(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
-
     public function deliveryNotes(): HasMany
     {
         return $this->hasMany(DeliveryNote::class);
+    }
+
+    public function lastDeliveryNote(): HasOne
+    {
+        return $this->hasOne(DeliveryNote::class)->latestOfMany();
     }
 
     /*
