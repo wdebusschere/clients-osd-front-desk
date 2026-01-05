@@ -15,20 +15,18 @@ class DeliverToUser extends Component
     #[Validate('nullable|exists:users,id')]
     public ?int $recipient_id = null;
 
-    public function mount()
-    {
-        $this->fill($this->deliveryReceipt);
-    }
-
     public function save()
     {
-        Gate::authorize('update', $this->deliveryReceipt);
+        Gate::authorize('deliverToUser', $this->deliveryReceipt);
 
-        $this->deliveryReceipt->recipient_id = $this->recipient_id;
-        $this->deliveryReceipt->save();
+        $deliveryNote = $this->deliveryReceipt->deliveryNotes()->create([
+            'user_id' => $this->recipient_id
+        ]);
 
-        $this->deliveryReceipt->recipient->notify(new DeliveryNotification($this->deliveryReceipt));
+        $deliveryNote->user->notify(new DeliveryNotification($this->deliveryReceipt));
 
-        $this->dispatch('saved');
+        $this->reset('recipient_id');
+
+        $this->dispatch('delivery-note-created');
     }
 }
