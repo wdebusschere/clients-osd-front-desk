@@ -53,4 +53,9 @@ class DeliveryReceiptPolicy
     {
         return $user->can('delivery receipts:delete');
     }
+
+    public function deliverToUser(User $user, DeliveryReceipt $deliveryReceipt): bool
+    {
+        return (int) $user->id === (int) $deliveryReceipt->user_id;
+    }
 }

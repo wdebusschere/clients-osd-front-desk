@@ -34,6 +34,7 @@ return [
     'days' => 'Day|Days',
     'delivered_to' => 'Delivered to',
     'deliveries' => 'Delivery|Deliveries',
+    'delivery_history' => 'Delivery history',
     'delivery_receipts' => 'Delivery receipt|Delivery receipts',
     'departments' => 'Department|Departments',
     'description' => 'Description',

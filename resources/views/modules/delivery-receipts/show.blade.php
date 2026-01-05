@@ -39,7 +39,17 @@
                 </div>
             </x-cards.details>
 
-            <livewire:delivery-receipts.deliver-to-user :$deliveryReceipt/>
+            @can('deliverToUser', $deliveryReceipt)
+                <livewire:delivery-receipts.deliver-to-user :$deliveryReceipt/>
+            @endcan
+
+            <x-ui.card>
+                <x-slot:heading>
+                    @lang('app.delivery_history')
+                </x-slot:heading>
+
+                <livewire:delivery-notes.table :delivery-receipt-id="$deliveryReceipt->id"/>
+            </x-ui.card>
         </div>
 
         <x-slot:aside>

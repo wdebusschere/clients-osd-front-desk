@@ -34,6 +34,7 @@ return [
     'days' => 'Dia|Dias',
     'delivered_to' => 'Entregue a',
     'deliveries' => 'Entrega|Entregas',
+    'delivery_history' => 'Histórico de entregas',
     'delivery_receipts' => 'Receção de entrega|Receções de entrega',
     'departments' => 'Departamento|Departamentos',
     'description' => 'Descrição',
