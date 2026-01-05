@@ -23,7 +23,6 @@ class DeliveryReceiptFactory extends Factory
             'observations' => fake()->text(),
             'recipient_type_id' => RecipientType::inRandomOrder()->first(),
             'user_id' => User::inRandomOrder()->first(),
-            'recipient_id' => User::inRandomOrder()->first(),
         ];
     }
 }

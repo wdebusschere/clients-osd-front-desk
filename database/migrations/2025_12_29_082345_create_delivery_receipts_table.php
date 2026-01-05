@@ -18,7 +18,6 @@ return new class extends Migration
             $table->text('observations')->nullable();
             $table->foreignId('recipient_type_id')->constrained()->cascadeOnUpdate();
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate();
-            $table->foreignId('recipient_id')->nullable()->constrained('users')->cascadeOnUpdate();
             $table->timestamps();
         });
     }
