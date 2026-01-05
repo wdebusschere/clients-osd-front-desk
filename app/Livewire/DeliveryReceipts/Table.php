@@ -17,6 +17,9 @@ class Table extends Component
     #[Url]
     public ?int $userId = null;
 
+    #[Url]
+    public ?int $recipientId = null;
+
     public function mount()
     {
         $this->order = ['reference' => 'DESC'];
@@ -29,10 +32,15 @@ class Table extends Component
 
     public function render()
     {
-        $deliveryReceipts = DeliveryReceipt::with('recipientType:id,name', 'user:id,name')
+        $deliveryReceipts = DeliveryReceipt::with([
+            'recipientType:id,name',
+            'user:id,name',
+            'recipient:id,name',
+        ])
             ->search($this->search)
             ->when($this->recipientTypeId, fn($query) => $query->where('recipient_type_id', $this->recipientTypeId))
-            ->when($this->userId, fn($query) => $query->where('user_id', $this->userId));
+            ->when($this->userId, fn($query) => $query->where('user_id', $this->userId))
+            ->when($this->recipientId, fn($query) => $query->where('recipient_id', $this->recipientId));
 
         foreach ($this->order as $attribute => $direction) {
             $deliveryReceipts->orderBy($attribute, $direction);

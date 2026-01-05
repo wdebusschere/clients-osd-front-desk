@@ -14,7 +14,12 @@
                 </x-forms.select>
 
                 <x-forms.select wire:model.live="userId">
-                    <option value="" selected>@choice('app.users', 0)</option>
+                    <option value="" selected>@lang('app.received_by')</option>
+                    @include('partials.selectors.users')
+                </x-forms.select>
+
+                <x-forms.select wire:model.live="recipientId">
+                    <option value="" selected>@lang('app.delivered_to')</option>
                     @include('partials.selectors.users')
                 </x-forms.select>
             </div>
@@ -44,7 +49,8 @@
                         @include('livewire.tables.partials.col-header', ['title' => trans('app.ref'), 'orderBy' => 'reference'])
                         @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.volumes', 1), 'orderBy' => 'volumes'])
                         @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.recipient_types', 1)])
-                        @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.users', 1)])
+                        @include('livewire.tables.partials.col-header', ['title' => trans('app.received_by')])
+                        @include('livewire.tables.partials.col-header', ['title' => trans('app.delivered_to')])
                         @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.dates', 1), 'orderBy' => 'created_at'])
                         @include('livewire.tables.partials.col-header', ['class' => 'w-0'])
                     </tr>
@@ -62,6 +68,16 @@
                                          class="rounded-full h-9 w-9 object-cover border border-gray-200 dark:border-transparent">
                                     {{ $deliveryReceipt->user->name }}
                                 </div>
+                            </td>
+                            <td>
+                                @if($deliveryReceipt->recipient)
+                                    <div class="flex items-center gap-3">
+                                        <img src="{{ $deliveryReceipt->recipient->profile_photo_url }}"
+                                             alt="{{ $deliveryReceipt->recipient->name }}"
+                                             class="rounded-full h-9 w-9 object-cover border border-gray-200 dark:border-transparent">
+                                        {{ $deliveryReceipt->recipient->name }}
+                                    </div>
+                                @endif
                             </td>
                             <td>@date($deliveryReceipt->created_at, 'L')</td>
                             <td class="text-right">

@@ -33,7 +33,7 @@
                     <x-attr.display
                         :label="trans_choice('app.recipient_types', 1)">{{ $deliveryReceipt->recipientType->name }}</x-attr.display>
                     <x-attr.display
-                        :label="trans_choice('app.users', 1)">{{ $deliveryReceipt->user->name }}</x-attr.display>
+                        :label="trans('app.received_by')">{{ $deliveryReceipt->user->name }}</x-attr.display>
                     <x-attr.display class="col-span-full" :label="trans_choice('app.observations', 0)"
                                     :pre-line="true">{{ $deliveryReceipt->observations }}</x-attr.display>
                 </div>
