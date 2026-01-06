@@ -44,11 +44,13 @@
 
     <div>
         <div class="flex items-center gap-4">
-            <x-forms.label for="photo" :value="trans_choice('app.photos', 1)" :optional="true"/>
+            <x-forms.label for="photo" :value="trans_choice('app.photos', 1)"/>
 
             @if(isset($deliveryReceipt) && ($photo = $deliveryReceipt->getFirstMedia('photo')))
                 <div class="mb-1">
-                    <a class="btn btn-sm btn-light flex items-center gap-1" href="{{ route('media.render', $photo) }}" target="_blank">
+                    <a class="btn btn-sm btn-light flex items-center gap-1"
+                       href="{{ route('media.render', $photo) }}"
+                       target="_blank">
                         <x-icons.outline.eye class="size-4"/>
                         {{ $photo->file_name }}
                     </a>
@@ -58,7 +60,8 @@
         <x-forms.input type="file"
                        id="photo"
                        name="photo"
-                       accept=".{{ implode(',.', config('settings.uploads.accepted_images')) }}"/>
+                       accept=".{{ implode(',.', config('settings.uploads.accepted_images')) }}"
+                       required/>
         <x-forms.helper text="{{ trans('info.uploads.file_size_limit') }}"/>
         <x-forms.input-error for="photo"/>
     </div>
