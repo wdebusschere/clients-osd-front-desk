@@ -27,7 +27,7 @@ class DeliveryReceiptRequest extends FormRequest
                 'nullable',
             ],
             'photo' => [
-                'nullable',
+                'required',
                 'max:'.config('media-library.max_file_size') / 1024,
                 'mimes:'.implode(',', config('settings.uploads.accepted_images')),
             ],
