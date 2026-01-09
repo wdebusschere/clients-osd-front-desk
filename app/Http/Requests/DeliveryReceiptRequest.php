@@ -14,9 +14,9 @@ class DeliveryReceiptRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'recipient_type_id' => [
+            'location_id' => [
                 'required',
-                'exists:recipient_types,id',
+                'exists:locations,id',
             ],
             'volumes' => [
                 'required',

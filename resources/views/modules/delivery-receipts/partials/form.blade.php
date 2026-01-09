@@ -8,19 +8,19 @@
 
 <div class="space-y-6">
     <div>
-        <x-forms.label for="recipient_type_id" :value="trans_choice('app.recipient_types', 0)"/>
-        <x-forms.select name="recipient_type_id"
-                        id="recipient_type_id"
+        <x-forms.label for="location_id" :value="trans_choice('app.locations', 0)"/>
+        <x-forms.select name="location_id"
+                        id="location_id"
                         required>
-            <option value="" selected>@choice('app.recipient_types', 0)</option>
+            <option value="" selected>@choice('app.locations', 0)</option>
             @include(
-                'partials.selectors.recipient-types',
+                'partials.selectors.locations',
                 [
-                    'selection' => old('recipient_type_id', $deliveryReceipt->recipient_type_id ?? ''),
+                    'selection' => old('location_id', $deliveryReceipt->location_id ?? ''),
                 ]
             )
         </x-forms.select>
-        <x-forms.input-error for="recipient_type_id" class="mt-2"/>
+        <x-forms.input-error for="location_id" class="mt-2"/>
     </div>
 
     <div>

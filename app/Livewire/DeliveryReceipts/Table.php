@@ -12,7 +12,7 @@ class Table extends Component
     use TableFeatures;
 
     #[Url]
-    public ?int $recipientTypeId = null;
+    public ?int $locationId = null;
 
     #[Url]
     public ?int $userId = null;
@@ -33,12 +33,12 @@ class Table extends Component
     public function render()
     {
         $deliveryReceipts = DeliveryReceipt::with([
-            'recipientType:id,name',
+            'location:id,name',
             'user:id,name',
             'lastDeliveryNote.user:id,name',
         ])
             ->search($this->search)
-            ->when($this->recipientTypeId, fn($query) => $query->where('recipient_type_id', $this->recipientTypeId))
+            ->when($this->locationId, fn($query) => $query->where('location_id', $this->locationId))
             ->when($this->userId, fn($query) => $query->where('user_id', $this->userId))
             ->when($this->recipientId, fn($query) => $query->whereHas('lastDeliveryNote', function ($query) {
                 $query->where('user_id', $this->recipientId);

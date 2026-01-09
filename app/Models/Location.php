@@ -3,13 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class RecipientType extends Model
+class Location extends Model
 {
+    use HasFactory;
     use LogsActivity;
 
     public function getActivitylogOptions(): LogOptions
@@ -19,6 +22,7 @@ class RecipientType extends Model
 
     protected $fillable = [
         'name',
+        'responsible_id',
     ];
 
     /*
@@ -44,5 +48,10 @@ class RecipientType extends Model
     public function deliveryReceipts(): HasMany
     {
         return $this->hasMany(DeliveryReceipt::class);
+    }
+
+    public function responsible(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

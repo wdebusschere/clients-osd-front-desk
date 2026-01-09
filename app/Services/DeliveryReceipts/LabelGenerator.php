@@ -64,8 +64,8 @@ class LabelGenerator
             $font->size(15);
         });
 
-        // Add recipient type
-        $volumesString = trans_choice('app.recipient_types', 1).': '.$this->deliveryReceipt->recipientType->name;
+        // Add location
+        $volumesString = trans_choice('app.locations', 1).': '.$this->deliveryReceipt->location->name;
 
         $image->text($volumesString, 10, 152, function ($font) {
             $font->file(storage_path('fonts/DejaVuSansCondensed.ttf'));

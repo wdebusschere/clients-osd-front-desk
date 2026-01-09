@@ -17,14 +17,14 @@ class ReferenceGenerator
         $deliveryReceipt = $this->deliveryReceipt;
 
         $id = $deliveryReceipt->id;
-        $recipientType = $deliveryReceipt->recipientType->name;
+        $location = $deliveryReceipt->location->name;
         $year = $deliveryReceipt->created_at->format('Y');
 
         $reference = sprintf(
             'DR-%d%05d-%.3s',
             $year,
             $id,
-            Str::slug($recipientType),
+            Str::slug($location),
         );
 
         return strtoupper($reference);

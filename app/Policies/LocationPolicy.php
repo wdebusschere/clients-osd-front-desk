@@ -2,17 +2,17 @@
 
 namespace App\Policies;
 
-use App\Models\RecipientType;
+use App\Models\Location;
 use App\Models\User;
 
-class RecipientTypePolicy
+class LocationPolicy
 {
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('recipient types:view');
+        return $user->can('locations:view');
     }
 
     /**
@@ -23,26 +23,26 @@ class RecipientTypePolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('recipient types:create');
+        return $user->can('locations:create');
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, RecipientType $recipientType): bool
+    public function update(User $user, Location $location): bool
     {
-        return $user->can('recipient types:update');
+        return $user->can('locations:update');
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  User  $user
-     * @param  RecipientType  $recipientType
+     * @param  Location  $location
      * @return bool
      */
-    public function delete(User $user, RecipientType $recipientType): bool
+    public function delete(User $user, Location $location): bool
     {
-        return $user->can('recipient types:delete');
+        return $user->can('locations:delete');
     }
 }

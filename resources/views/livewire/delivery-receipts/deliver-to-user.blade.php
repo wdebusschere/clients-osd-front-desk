@@ -15,7 +15,7 @@
                 <x-forms.select name="recipient_id"
                                 id="recipient_id"
                                 wire:model="recipient_id">
-                    <option value="" selected>@choice('app.recipients', 0)</option>
+                    <option value="" selected>@choice('app.users', 0)</option>
                     @include('partials.selectors.users')
                 </x-forms.select>
                 <x-forms.input-error for="recipient_id"/>

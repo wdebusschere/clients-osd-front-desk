@@ -2,14 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\Location;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class DeliveryReceiptFactory extends Factory
+class LocationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,10 +18,8 @@ class DeliveryReceiptFactory extends Factory
     public function definition(): array
     {
         return [
-            'volumes' => fake()->numberBetween(1, 10),
-            'observations' => fake()->text(),
-            'location_id' => Location::inRandomOrder()->first(),
-            'user_id' => User::inRandomOrder()->first(),
+            'name' => fake()->sentence(2),
+            'responsible_id' => User::inRandomOrder()->first(),
         ];
     }
 }

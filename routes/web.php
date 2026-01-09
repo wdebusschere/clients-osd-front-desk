@@ -6,7 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeliveryReceiptController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\NotificationController;
-use App\Http\Controllers\RecipientTypeController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +31,7 @@ Route::middleware([
     Route::resource('activity-logs', ActivityLogController::class)->only('index');
     Route::resource('delivery-receipts', DeliveryReceiptController::class);
     Route::resource('notifications', NotificationController::class)->only('index');
-    Route::resource('recipient-types', RecipientTypeController::class)->except('show');
+    Route::resource('locations', LocationController::class)->except('show');
     Route::resource('roles', RoleController::class)->except('show');
     Route::resource('users', UserController::class)->except('create', 'store', 'destroy');
 });
