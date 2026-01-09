@@ -7,7 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class DeliveryNotification extends Notification
+class LocationResponsibleNotification extends Notification
 {
     use Queueable;
 
@@ -34,7 +34,7 @@ class DeliveryNotification extends Notification
      */
     public function databaseType(object $notifiable): string
     {
-        return __('New delivery');
+        return __("New delivery for :location", ['location' => $this->deliveryReceipt->location->name]);
     }
 
     /**
@@ -43,9 +43,12 @@ class DeliveryNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject(__("You received a new order"))
+            ->subject(__("Receipt of order to the :location location", ['location' => $this->deliveryReceipt->location->name]))
             ->greeting(trans('app.dear').' '.$notifiable->name.',')
-            ->line(__("You received a new order on :date.", ['date' => $this->deliveryReceipt->created_at->isoFormat('LL')]))
+            ->line(__("A new order was received for the :location location on :date.", [
+                'location' => $this->deliveryReceipt->location->name,
+                'date' => $this->deliveryReceipt->created_at->isoFormat('LL')
+            ]))
             ->action(trans_choice('app.see_details', 0), route('delivery-receipts.show', $this->deliveryReceipt));
     }
 
@@ -57,7 +60,7 @@ class DeliveryNotification extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            'title' => __("You received a new order"),
+            'title' => __("Receipt of order to the :location location", ['location' => $this->deliveryReceipt->location->name]),
             'url' => route('delivery-receipts.show', $this->deliveryReceipt),
         ];
     }

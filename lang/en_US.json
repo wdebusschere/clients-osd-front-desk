@@ -1,4 +1,5 @@
 {
+    "A new order was received for the :location location on :date.": "A new order was received for the :location location on :date.",
     "A new verification link has been sent to your email address.": "A new verification link has been sent to your email address.",
     "Add additional security to your account using two factor authentication.": "Add additional security to your account using two factor authentication.",
     "All rights reserved.": "All rights reserved.",
@@ -28,6 +29,8 @@
     "Log in to continue to the Dashboard.": "Log in to continue to the Dashboard.",
     "Login with OSD HQ": "Login with OSD HQ",
     "Log Out Other Browser Sessions": "Log Out Other Browser Sessions",
+    "New delivery": "New delivery",
+    "New delivery for :location": "New delivery for :location",
     "Manage and log out your active sessions on other browsers and devices.": "Manage and log out your active sessions on other browsers and devices.",
     "Manage API Tokens": "Manage API Tokens",
     "No new notifications": "No new notifications",
@@ -39,6 +42,7 @@
     "Please copy your new API token. For your security, it won't be shown again.": "Please copy your new API token. For your security, it won't be shown again.",
     "Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.": "Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.",
     "Profile Information": "Profile Information",
+    "Receipt of order to the :location location": "Receipt of order to the :location location",
     "Recovery Code": "Recovery Code",
     "Regenerate Recovery Codes": "Regenerate Recovery Codes",
     "Remember me": "Remember me",
@@ -68,5 +72,7 @@
     "You have enabled two factor authentication.": "You have enabled two factor authentication.",
     "You have not enabled two factor authentication.": "You have not enabled two factor authentication.",
     "You may delete any of your existing tokens if they are no longer needed.": "You may delete any of your existing tokens if they are no longer needed.",
+    "You received a new order": "You received a new order",
+    "You received a new order on :date.": "You received a new order on :date",
     "Your email address is unverified.": "Your email address is unverified."
 }
