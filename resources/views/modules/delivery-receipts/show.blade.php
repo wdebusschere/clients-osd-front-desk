@@ -1,6 +1,6 @@
 @php
     $breadcrumbs = [
-        trans_choice('app.delivery_receipts', 0) => route('delivery-receipts.index'),
+        trans_choice('app.delivery_receipts', 0) => auth()->user()->can('viewAny', \App\Models\DeliveryReceipt::class) ? route('delivery-receipts.index') : null,
         trans('crud.show') => null,
     ];
 @endphp
@@ -17,11 +17,13 @@
     <x-show-sections>
         <div class="space-y-6">
             <x-cards.details :model="$deliveryReceipt">
-                <x-slot:headerActions>
-                    <a class="btn btn-primary" href="{{ route('delivery-receipts.edit', $deliveryReceipt) }}">
-                        @lang('crud.edit')
-                    </a>
-                </x-slot:headerActions>
+                @can('update', $deliveryReceipt)
+                    <x-slot:headerActions>
+                        <a class="btn btn-primary" href="{{ route('delivery-receipts.edit', $deliveryReceipt) }}">
+                            @lang('crud.edit')
+                        </a>
+                    </x-slot:headerActions>
+                @endif
 
                 <x-slot:headline>
                     {{ $deliveryReceipt->reference }}

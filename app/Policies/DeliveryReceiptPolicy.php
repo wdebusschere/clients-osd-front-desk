@@ -20,6 +20,10 @@ class DeliveryReceiptPolicy
      */
     public function view(User $user, DeliveryReceipt $deliveryReceipt): bool
     {
+        if ((int) $user->id === (int) $deliveryReceipt->location->responsible_id) {
+            return true;
+        }
+
         return $user->can('delivery receipts:view');
     }
 

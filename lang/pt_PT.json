@@ -1,4 +1,5 @@
 {
+    "A new order was received for the :location location on :date.": "Uma nova encomenda foi recebida para a localização :location a :date",
     "A new verification link has been sent to your email address.": "Um novo link de verificação foi enviado para o seu endereço de email.",
     "Add additional security to your account using two factor authentication.": "Adicione segurança extra à sua conta utilizando a autenticação de dois fatores.",
     "All rights reserved.": "Todos os direitos reservados.",
@@ -28,6 +29,8 @@
     "Log in to continue to the Dashboard.": "Inicie sessão para continuar para o painel de controlo.",
     "Login with OSD HQ": "Iniciar sessão com OSD HQ",
     "Log Out Other Browser Sessions": "Terminar Sessão em Outras Sessões do Navegador",
+    "New delivery": "Nova encomenda",
+    "New delivery for :location": "Nova encomenda para :location",
     "Manage and log out your active sessions on other browsers and devices.": "Gira e termine as suas sessões ativas noutros navegadores e dispositivos.",
     "Manage API Tokens": "Gerir Tokens de API",
     "No new notifications": "Sem novas notificações",
@@ -39,6 +42,7 @@
     "Please copy your new API token. For your security, it won't be shown again.": "Copie o seu novo token de API. Para sua segurança, ele não será mostrado novamente.",
     "Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.": "Insira a sua palavra-passe para confirmar que deseja terminar sessão nas outras sessões do navegador em todos os seus dispositivos.",
     "Profile Information": "Informação do Perfil",
+    "Receipt of order to the :location location": "Receção de encomenda para a localização :location",
     "Recovery Code": "Código de Recuperação",
     "Regenerate Recovery Codes": "Regenerar Códigos de Recuperação",
     "Remember me": "Lembrar-me",
@@ -68,5 +72,7 @@
     "You have enabled two factor authentication.": "Ativou a autenticação de dois fatores.",
     "You have not enabled two factor authentication.": "Não ativou a autenticação de dois fatores.",
     "You may delete any of your existing tokens if they are no longer needed.": "Pode eliminar quaisquer tokens existentes se já não forem necessários.",
+    "You received a new order": "Recebeu uma nova encomenda",
+    "You received a new order on :date.": "Recebeu uma nova encomenda a :date",
     "Your email address is unverified.": "O seu endereço de email não está verificado."
 }

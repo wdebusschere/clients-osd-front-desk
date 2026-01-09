@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DeliveryReceiptRequest;
 use App\Models\DeliveryReceipt;
+use App\Notifications\DeliveryReceipts\LocationResponsibleNotification;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
@@ -35,6 +36,8 @@ class DeliveryReceiptController extends Controller
         if (isset($validatedData['photo'])) {
             $deliveryReceipt->addMediaFromRequest('photo')->toMediaCollection('photo');
         }
+
+        $deliveryReceipt->location->responsible->notify(new LocationResponsibleNotification($deliveryReceipt));
 
         return to_route('delivery-receipts.show', $deliveryReceipt)->banner(trans('crud.record_created_success'));
     }
