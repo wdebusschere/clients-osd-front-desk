@@ -87,6 +87,11 @@ class User extends Authenticatable implements HasLocalePreference, MustVerifyEma
         return $this->hasMany(DeliveryNote::class);
     }
 
+    public function locations(): HasMany
+    {
+        return $this->hasMany(Location::class);
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Features

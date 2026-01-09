@@ -30,7 +30,7 @@ class DeliveryReceipt extends Model implements HasMedia
     protected $fillable = [
         'volumes',
         'observations',
-        'recipient_type_id',
+        'location_id',
     ];
 
     /*
@@ -53,9 +53,9 @@ class DeliveryReceipt extends Model implements HasMedia
     |--------------------------------------------------------------------------
     */
 
-    public function recipientType(): BelongsTo
+    public function location(): BelongsTo
     {
-        return $this->belongsTo(RecipientType::class);
+        return $this->belongsTo(Location::class);
     }
 
     public function user(): BelongsTo

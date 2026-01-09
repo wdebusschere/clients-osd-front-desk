@@ -8,9 +8,9 @@
             <div class="grid grid-cols-2 xl:grid-cols-4 gap-3 mb-3">
                 <x-forms.input wire:model.live.debounce.300ms="search" :placeholder="trans('app.search').'...'"/>
 
-                <x-forms.select wire:model.live="recipientTypeId">
-                    <option value="" selected>@choice('app.recipient_types', 0)</option>
-                    @include('partials.selectors.recipient-types')
+                <x-forms.select wire:model.live="locationId">
+                    <option value="" selected>@choice('app.locations', 0)</option>
+                    @include('partials.selectors.locations')
                 </x-forms.select>
 
                 <x-forms.select wire:model.live="userId">
@@ -48,7 +48,7 @@
                     <tr>
                         @include('livewire.tables.partials.col-header', ['title' => trans('app.ref'), 'orderBy' => 'reference'])
                         @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.volumes', 1), 'orderBy' => 'volumes'])
-                        @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.recipient_types', 1)])
+                        @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.locations', 1)])
                         @include('livewire.tables.partials.col-header', ['title' => trans('app.received_by')])
                         @include('livewire.tables.partials.col-header', ['title' => trans('app.delivered_to')])
                         @include('livewire.tables.partials.col-header', ['title' => trans_choice('app.dates', 1), 'orderBy' => 'created_at'])
@@ -60,7 +60,7 @@
                         <tr wire:key="dt-row-key-{{ $deliveryReceipt->id }}">
                             <td>{{ $deliveryReceipt->reference }}</td>
                             <td>{{ $deliveryReceipt->volumes }}</td>
-                            <td>{{ $deliveryReceipt->recipientType->name }}</td>
+                            <td>{{ $deliveryReceipt->location->name }}</td>
                             <td>
                                 <div class="flex items-center gap-3">
                                     <img src="{{ $deliveryReceipt->user->profile_photo_url }}"

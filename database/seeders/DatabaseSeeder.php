@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Database\Seeders\Dummy\DeliveryReceiptSeeder as DummyDeliveryReceiptSeeder;
+use Database\Seeders\Dummy\LocationSeeder as DummyLocationSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
 
@@ -22,7 +23,6 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
-            RecipientTypeSeeder::class,
         ]);
     }
 
@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
             RoleSeeder::class,
             UserSeeder::class,
-            RecipientTypeSeeder::class,
+            DummyLocationSeeder::class,
             DummyDeliveryReceiptSeeder::class
         ]);
     }

@@ -20,7 +20,7 @@ class PermissionSeeder extends Seeder
 
         $resources = [
             'activity logs' => ['view'],
-            'recipient types' => $defaultActions,
+            'locations' => $defaultActions,
             'delivery receipts' => $defaultActions,
             'roles' => $defaultActions,
             'users' => ['view', 'update', 'import from HQ'],

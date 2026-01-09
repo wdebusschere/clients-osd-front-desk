@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recipient_types', function (Blueprint $table) {
+        Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('responsible_id')->constrained('users')->cascadeOnUpdate();
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recipient_types');
+        Schema::dropIfExists('locations');
     }
 };

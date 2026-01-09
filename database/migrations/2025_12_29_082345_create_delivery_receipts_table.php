@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('reference')->nullable();
             $table->unsignedInteger('volumes');
             $table->text('observations')->nullable();
-            $table->foreignId('recipient_type_id')->constrained()->cascadeOnUpdate();
+            $table->foreignId('location_id')->constrained()->cascadeOnUpdate();
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate();
             $table->timestamps();
         });

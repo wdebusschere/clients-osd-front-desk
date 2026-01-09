@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RecipientTypeRequest extends FormRequest
+class LocationRequest extends FormRequest
 {
     public function authorize()
     {
@@ -18,6 +18,10 @@ class RecipientTypeRequest extends FormRequest
                 'required',
                 'max:255',
             ],
+            'responsible_id' => [
+                'required',
+                'exists:users,id',
+            ]
         ];
     }
 }
